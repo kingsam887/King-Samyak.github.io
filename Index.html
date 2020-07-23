@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head> <TITLE> KING SAMYAK </TITLE>
+<link rel="comical" href="www.KING SAMYAK.com">
+	<link rel="HTML" type="text/HTML" href="Shah.html">
+</HEAD>
+<body bgcolor="WHITE">
+			
+<div align=center>
+<h1 font-family="Colonna MT"> King Samyak </h1>
+
+<p> Thanks for watching  </p> <br>   
+		   	</br>
+		<button id="demo" type="button" onClick="document.getElementById('demo').innerHTML='SUBSCRIBED' ">SUBSCRIBE</button><br>
+		<button id="samyak" type="button" onclick="document.getElementById('demo').innerHTML='Downloading...'">Download for free</button>
+<p> This Channel is joined to youtube in Apr 19,2020 </p> </br>
+</body>
+</div>
+<body>
+<div aling=left>
+<h2> # The Script of tic tac toe </h2>
+@ECHO OFF </br>
+:BEGIN  </br>
+  REM Skill level </br>
+  set sl= </br>
+  cls </br>
+  color 2 </br>
+  echo                        THE TIC TAC TOE BY</br>                (Q to quit)</br>
+  echo                                        -SAMYAK </br>
+  echo.
+  echo.
+  echo        Pick your skill level (press a number)</br>
+  echo. </br>
+  echo               (1) VERY EASY </br>
+  echo               (2) LITTLE BIT HARD </br>
+  echo               (3) YOU WILL NOT WIN </br>
+  CHOICE /c:123q /n > nul </br>
+  if errorlevel 4 goto end </br>
+  if errorlevel 3 set sl=3 </br>
+  if errorlevel 3 goto layout </br>
+  if errorlevel 2 set sl=2 </br>
+  if errorlevel 2 goto layout </br>
+  set sl=1 </br>
+</br>
+:LAYOUT </br>
+  REM Player turn ("x" or "o") </br>
+  set pt= </br>
+  REM Game winner ("x" or "o") </br>
+  set gw= </br>
+  REM No moves </br>
+  set nm= </br>
+  REM Set to one blank space after equal sign (check with cursor end) </br>
+  set t1= </br>
+  set t2= </br>
+  set t3= </br>
+  set t4= </br>
+  set t5= </br>
+  set t6= </br>
+  set t7= </br>
+  set t8= </br>
+  set t9= </br>
+</br>
+:UPDATE </br>
+  cls </br>
+  echo   (S to set skill level)       THE TIC TAC TOE BY                (Q to quit) </br>
+  echo                                                -SAMYAK </br>
+  echo. </br>
+  echo                               You are the X player. </br>
+  echo                    Press the number where you want to put an X. </br>     
+  echo. </br>
+  echo   Skill level %sl%                       7 8 9 </br> 
+  echo                                       4 5 6 </br>
+  echo                                       1 2 3 </br>
+  echo. </br>
+  echo                                       :   : </br>
+  echo                                     %t1% : %t2% : %t3% </br>
+  echo                                   ....:...:.... </br>
+  echo                                     %t4% : %t5% : %t6% </br>
+  echo                                   ....:...:.... </br>
+  echo                                     %t7% : %t8% : %t9% </br>
+  echo                                       :   : </br>
+  if "%gw%"=="x" goto winx2 </br>
+  if "%gw%"=="o" goto wino2 </br>
+  if "%nm%"=="0" goto nomoves </br>
+</br>
+:PLAYER </br>
+  set pt=x </br>
+  REM Layout is for keypad. Change CHOICE to "/c:123456789sq  /n > nul" </br>
+  REM for numbers to start at top left (also change user layout above). </br>
+  CHOICE /c:789456123sq /n > nul </br>
+  if errorlevel 11 goto end </br>
+  if errorlevel 10 goto begin </br>
+  if errorlevel 9 goto 9 </br>
+  if errorlevel 8 goto 8 </br>
+  if errorlevel 7 goto 7 </br>
+  if errorlevel 6 goto 6 </br>
+  if errorlevel 5 goto 5 </br>
+  if errorlevel 4 goto 4 </br>
+  if errorlevel 3 goto 3 </br>
+  if errorlevel 2 goto 2 </br>
+  goto 1 </br>
+</br>
+:1  </br>
+  REM Check if "x" or "o" already in square. </br>
+  if "%t1%"=="x" goto player </br>
+  if "%t1%"=="o" goto player </br>
+  set t1=x </br>
+  goto check </br>
+:2  </br>
+  if "%t2%"=="x" goto player </br>
+  if "%t2%"=="o" goto player </br>
+  set t2=x </br>
+  goto check </br>
+:3  </br>
+  if "%t3%"=="x" goto player </br> 
+  if "%t3%"=="o" goto player </br>
+  set t3=x </br>
+  goto check </br>
+:4  </br>
+  if "%t4%"=="x" goto player </br>
+  if "%t4%"=="o" goto player </br>
+  set t4=x </br> 
+  goto check </br>
+:5   </br>
+  if "%t5%"=="x" goto player </br>
+  if "%t5%"=="o" goto player </br>
+  set t5=x </br>
+  goto check </br>
+:6  </br>
+  if "%t6%"=="x" goto player </br>
+  if "%t6%"=="o" goto player </br>
+  set t6=x </br>
+  goto check </br>
+:7  </br>
+  if "%t7%"=="x" goto player </br>
+  if "%t7%"=="o" goto player </br>
+  set t7=x </br>
+  goto check </br>
+:8   </br>
+  if "%t8%"=="x" goto player </br>
+  if "%t8%"=="o" goto player </br>
+  set t8=x </br>
+  goto check </br>
+:9  </br>
+  if "%t9%"=="x" goto player </br>
+  if "%t9%"=="o" goto player </br>
+  set t9=x </br>
+  goto check </br>
+</br>
+:COMPUTER </br>
+  set pt=o </br>
+  if "%sl%"=="1" goto skill1 </br>  
+ REM (win corner to corner) </br>
+  if "%t1%"=="o" if "%t3%"=="o" if not "%t2%"=="x" if not "%t2%"=="o" goto c2 </br>
+  if "%t1%"=="o" if "%t9%"=="o" if not "%t5%"=="x" if not "%t5%"=="o" goto c5 </br>
+  if "%t1%"=="o" if "%t7%"=="o" if not "%t4%"=="x" if not "%t4%"=="o" goto c4 </br>
+  if "%t3%"=="o" if "%t7%"=="o" if not "%t5%"=="x" if not "%t5%"=="o" goto c5 </br> 
+  if "%t3%"=="o" if "%t9%"=="o" if not "%t6%"=="x" if not "%t6%"=="o" goto c6 </br>
+  if "%t9%"=="o" if "%t7%"=="o" if not "%t8%"=="x" if not "%t8%"=="o" goto c8 </br>
+ REM (win outside middle to outside middle) </br>
+  if "%t2%"=="o" if "%t8%"=="o" if not "%t5%"=="x" if not "%t5%"=="o" goto c5 </br>
+  if "%t4%"=="o" if "%t6%"=="o" if not "%t5%"=="x" if not "%t5%"=="o" goto c5 </br>
+ REM (win all others) </br>
+  if "%t1%"=="o" if "%t2%"=="o" if not "%t3%"=="x" if not "%t3%"=="o" goto c3 </br>
+  if "%t1%"=="o" if "%t5%"=="o" if not "%t9%"=="x" if not "%t9%"=="o" goto c9 </br>
+  if "%t1%"=="o" if "%t4%"=="o" if not "%t7%"=="x" if not "%t7%"=="o" goto c7 </br>
+  if "%t2%"=="o" if "%t5%"=="o" if not "%t8%"=="x" if not "%t8%"=="o" goto c8 </br>
+  if "%t3%"=="o" if "%t2%"=="o" if not "%t1%"=="x" if not "%t1%"=="o" goto c1 </br>
+  if "%t3%"=="o" if "%t5%"=="o" if not "%t7%"=="x" if not "%t7%"=="o" goto c7 </br>
+  if "%t3%"=="o" if "%t6%"=="o" if not "%t9%"=="x" if not "%t9%"=="o" goto c9 </br>
+  if "%t4%"=="o" if "%t5%"=="o" if not "%t6%"=="x" if not "%t6%"=="o" goto c6 </br>
+  if "%t6%"=="o" if "%t5%"=="o" if not "%t4%"=="x" if not "%t4%"=="o" goto c4 </br>
+  if "%t7%"=="o" if "%t4%"=="o" if not "%t1%"=="x" if not "%t1%"=="o" goto c1 </br>
+  if "%t7%"=="o" if "%t5%"=="o" if not "%t3%"=="x" if not "%t3%"=="o" goto c3 </br>
+  if "%t7%"=="o" if "%t8%"=="o" if not "%t9%"=="x" if not "%t9%"=="o" goto c9 </br>
+  if "%t8%"=="o" if "%t5%"=="o" if not "%t2%"=="x" if not "%t2%"=="o" goto c2 </br>
+  if "%t9%"=="o" if "%t8%"=="o" if not "%t7%"=="x" if not "%t7%"=="o" goto c7 </br>
+  if "%t9%"=="o" if "%t5%"=="o" if not "%t1%"=="x" if not "%t1%"=="o" goto c1</br>
+  if "%t9%"=="o" if "%t6%"=="o" if not "%t3%"=="x" if not "%t3%"=="o" goto c3 </br>
+ REM (block general attempts) ----------------------------------------------- </br>
+  if "%t1%"=="x" if "%t2%"=="x" if not "%t3%"=="x" if not "%t3%"=="o" goto c3 </br>
+  if "%t1%"=="x" if "%t5%"=="x" if not "%t9%"=="x" if not "%t9%"=="o" goto c9 </br>
+  if "%t1%"=="x" if "%t4%"=="x" if not "%t7%"=="x" if not "%t7%"=="o" goto c7 </br>
+  if "%t2%"=="x" if "%t5%"=="x" if not "%t8%"=="x" if not "%t8%"=="o" goto c8 </br>
+  if "%t3%"=="x" if "%t2%"=="x" if not "%t1%"=="x" if not "%t1%"=="o" goto c1 </br>
+  if "%t3%"=="x" if "%t5%"=="x" if not "%t7%"=="x" if not "%t7%"=="o" goto c7</br>
+  if "%t3%"=="x" if "%t6%"=="x" if not "%t9%"=="x" if not "%t9%"=="o" goto c9 </br>
+  if "%t4%"=="x" if "%t5%"=="x" if not "%t6%"=="x" if not "%t6%"=="o" goto c6 </br>
+  if "%t6%"=="x" if "%t5%"=="x" if not "%t4%"=="x" if not "%t4%"=="o" goto c4</br>
+  if "%t7%"=="x" if "%t4%"=="x" if not "%t1%"=="x" if not "%t1%"=="o" goto c1 </br>
+  if "%t7%"=="x" if "%t5%"=="x" if not "%t3%"=="x" if not "%t3%"=="o" goto c3 </br>
+  if "%t7%"=="x" if "%t8%"=="x" if not "%t9%"=="x" if not "%t9%"=="o" goto c9 </br>
+  if "%t8%"=="x" if "%t5%"=="x" if not "%t2%"=="x" if not "%t2%"=="o" goto c2 </br>
+  if "%t9%"=="x" if "%t8%"=="x" if not "%t7%"=="x" if not "%t7%"=="o" goto c7 </br>
+  if "%t9%"=="x" if "%t5%"=="x" if not "%t1%"=="x" if not "%t1%"=="o" goto c1 </br>
+  if "%t9%"=="x" if "%t6%"=="x" if not "%t3%"=="x" if not "%t3%"=="o" goto c3 </br>
+ REM (block obvious corner to corner)  </br>
+  if "%t1%"=="x" if "%t3%"=="x" if not "%t2%"=="x" if not "%t2%"=="o" goto c2 </br>
+  if "%t1%"=="x" if "%t9%"=="x" if not "%t5%"=="x" if not "%t5%"=="o" goto c5 </br>
+  if "%t1%"=="x" if "%t7%"=="x" if not "%t4%"=="x" if not "%t4%"=="o" goto c4  </br>
+  if "%t3%"=="x" if "%t7%"=="x" if not "%t5%"=="x" if not "%t5%"=="o" goto c5 </br>
+  if "%t3%"=="x" if "%t9%"=="x" if not "%t6%"=="x" if not "%t6%"=="o" goto c6 </br>
+  if "%t9%"=="x" if "%t7%"=="x" if not "%t8%"=="x" if not "%t8%"=="o" goto c8 </br>
+  if "%sl%"=="2" goto skill2 </br>
+ REM (block sneaky corner to corner 2-4, 2-6, etc.) </br> 
+  if "%t2%"=="x" if "%t4%"=="x" if not "%t1%"=="x" if not "%t1%"=="o" goto c1 </br> 
+  if "%t2%"=="x" if "%t6%"=="x" if not "%t3%"=="x" if not "%t3%"=="o" goto c3 </br>
+  if "%t8%"=="x" if "%t4%"=="x" if not "%t7%"=="x" if not "%t7%"=="o" goto c7   </br>
+  if "%t8%"=="x" if "%t6%"=="x" if not "%t9%"=="x" if not "%t9%"=="o" goto c9</br>
+ REM (block offset corner trap 1-8, 1-6, etc.) </br>
+  if "%t1%"=="x" if "%t6%"=="x" if not "%t8%"=="x" if not "%t8%"=="o" goto c8 </br>
+  if "%t1%"=="x" if "%t8%"=="x" if not "%t6%"=="x" if not "%t6%"=="o" goto c6 </br>
+  if "%t3%"=="x" if "%t8%"=="x" if not "%t4%"=="x" if not "%t4%"=="o" goto c4 </br>
+  if "%t3%"=="x" if "%t4%"=="x" if not "%t8%"=="x" if not "%t8%"=="o" goto c8 </br>
+  if "%t9%"=="x" if "%t4%"=="x" if not "%t2%"=="x" if not "%t2%"=="o" goto c2 </br>
+  if "%t9%"=="x" if "%t2%"=="x" if not "%t4%"=="x" if not "%t4%"=="o" goto c4 </br>
+  if "%t7%"=="x" if "%t2%"=="x" if not "%t6%"=="x" if not "%t6%"=="o" goto c6 </br>
+  if "%t7%"=="x" if "%t6%"=="x" if not "%t2%"=="x" if not "%t2%"=="o" goto c2 </br>
+ </br>
+:SKILL2 </br>
+ REM (block outside middle to outside middle) </br>
+  if "%t2%"=="x" if "%t8%"=="x" if not "%t5%"=="x" if not "%t5%"=="o" goto c5 </br>
+  if "%t4%"=="x" if "%t6%"=="x" if not "%t5%"=="x" if not "%t5%"=="o" goto c5 </br>
+ REM (block 3 corner trap) </br>
+  if "%t1%"=="x" if "%t9%"=="x" if not "%t2%"=="x" if not "%t2%"=="o" goto c2 </br>
+  if "%t3%"=="x" if "%t7%"=="x" if not "%t2%"=="x" if not "%t2%"=="o" goto c2 </br>
+  if "%t1%"=="x" if "%t9%"=="x" if not "%t4%"=="x" if not "%t4%"=="o" goto c4 </br>
+  if "%t3%"=="x" if "%t7%"=="x" if not "%t4%"=="x" if not "%t4%"=="o" goto c4 </br>
+  if "%t1%"=="x" if "%t9%"=="x" if not "%t6%"=="x" if not "%t6%"=="o" goto c6 </br>
+  if "%t3%"=="x" if "%t7%"=="x" if not "%t6%"=="x" if not "%t6%"=="o" goto c6 </br>
+  if "%t1%"=="x" if "%t9%"=="x" if not "%t8%"=="x" if not "%t8%"=="o" goto c8 </br>
+  if "%t3%"=="x" if "%t7%"=="x" if not "%t8%"=="x" if not "%t8%"=="o" goto c8 </br>
+:SKILL1 </br>
+ REM (just take a turn) </br> 
+  if not "%t5%"=="x" if not "%t5%"=="o" goto c5 </br>
+  if not "%t1%"=="x" if not "%t1%"=="o" goto c1 </br>
+  if not "%t3%"=="x" if not "%t3%"=="o" goto c3 </br>
+  if not "%t7%"=="x" if not "%t7%"=="o" goto c7 </br>
+  if not "%t9%"=="x" if not "%t9%"=="o" goto c9 </br>
+  if not "%t2%"=="x" if not "%t2%"=="o" goto c2 </br>
+  if not "%t4%"=="x" if not "%t4%"=="o" goto c4 </br>
+  if not "%t6%"=="x" if not "%t6%"=="o" goto c6 </br>
+  if not "%t8%"=="x" if not "%t8%"=="o" goto c8 </br>
+  set nm=0 </br>
+  goto update</br>
+</br>
+:C1  </br>
+  set t1=o </br>
+  goto check </br>
+:C2  </br>
+  set t2=o </br>
+  goto check </br>
+:C3  </br>
+  set t3=o </br>
+  goto check </br>
+:C4  </br>
+  set t4=o </br>
+  goto check </br>
+:C5  </br>
+  set t5=o </br>
+  goto check </br>
+:C6  </br>
+  set t6=o </br>
+  goto check </br>
+:C7  </br>
+  set t7=o </br>
+  goto check </br>
+:C8  </br>
+  set t8=o </br>
+  goto check </br>
+:C9  </br>
+  set t9=o </br>
+  goto check </br>
+</br>
+:CHECK </br>
+  if "%t1%"=="x" if "%t2%"=="x" if "%t3%"=="x" goto winx                                                               if "%t4%"=="x" if "%t5%"=="x" if "%t6%"=="x" goto winx </br>
+  if "%t7%"=="x" if "%t8%"=="x" if "%t9%"=="x" goto winx </br>
+  if "%t1%"=="x" if "%t4%"=="x" if "%t7%"=="x" goto winx </br>
+  if "%t2%"=="x" if "%t5%"=="x" if "%t8%"=="x" goto winx </br>
+  if "%t3%"=="x" if "%t6%"=="x" if "%t9%"=="x" goto winx </br>
+  if "%t1%"=="x" if "%t5%"=="x" if "%t9%"=="x" goto winx </br>
+  if "%t3%"=="x" if "%t5%"=="x" if "%t7%"=="x" goto winx </br>
+  if "%t1%"=="o" if "%t2%"=="o" if "%t3%"=="o" goto wino </br>
+  if "%t4%"=="o" if "%t5%"=="o" if "%t6%"=="o" goto wino </br>
+  if "%t7%"=="o" if "%t8%"=="o" if "%t9%"=="o" goto wino </br>
+  if "%t1%"=="o" if "%t4%"=="o" if "%t7%"=="o" goto wino </br>
+  if "%t2%"=="o" if "%t5%"=="o" if "%t8%"=="o" goto wino </br>
+  if "%t3%"=="o" if "%t6%"=="o" if "%t9%"=="o" goto wino </br>
+  if "%t1%"=="o" if "%t5%"=="o" if "%t9%"=="o" goto wino </br>
+  if "%t3%"=="o" if "%t5%"=="o" if "%t7%"=="o" goto wino </br>
+  if "%pt%"=="x" goto computer </br>
+  if "%pt%"=="o" goto update </br>
+</br>
+:WINX </br>
+  set gw=x </br>
+  goto update </br>
+:WINX2 </br>
+  echo   You win! </br>
+  echo   Play again (Y,N)? </br>
+  CHOICE /c:ynsq /n > nul </br>
+  if errorlevel 4 goto end </br>
+  if errorlevel 3 goto begin </br>
+  if errorlevel 2 goto end </br>
+  goto layout </br>
+</br>
+:WINO </br>
+  set gw=o </br>
+  goto update </br>
+:WINO2 </br>
+  echo   Sorry, You lose. </br>
+  echo   Play again (Y,N)? </br>
+  CHOICE /c:ynsq /n > nul </br>
+  if errorlevel 4 goto end </br>
+  if errorlevel 3 goto begin </br>
+  if errorlevel 2 goto end </br>
+  goto layout </br>
+</br>
+:NOMOVES </br>
+  echo   There are no more moves left! </br>
+  echo   Play again (Y,N)? </br>
+  CHOICE /c:ynsq /n > nul </br>
+  if errorlevel 4 goto end </br>
+  if errorlevel 3 goto begin </br>
+  if errorlevel 2 goto end </br>
+  goto layout </br>
+</br>
+:END </br>
+  cls </br>
+  echo THE TIC TAC TOE BY </br>        
+  echo. </br>
+  REM Clear all variables (no spaces after equal sign). </br>
+  set gw= </br>
+  set nm= </br>
+  set sl= </br>
+  set pt= </br>
+  set t1= </br>
+  set t2= </br>
+  set t3= </br>
+  set t4= </br>
+  set t5= </br>
+  set t6= </br>
+  set t7= </br>
+  set t8= </br>
+  set t9= </br>
+   </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+tic tac toe.txt </br>
+Displaying tic tac toe.txt. </br> </hr>
+<h3>Save this file in bat Extration</h3> </br>
+</br>
+</br>
+<h2># The Script of Calculator </h2>
+@echo off </br>
+title Batch calculator By Samyak </br>
+color 4 </br>
+:top </br>
+echo---------------------------------------------------------------------------------</br>
+echo Welcome to Batch Calculator
+echo---------------------------------------------------------------------------------</br>
+echo. </br>
+set /p sum= </br>
+set /a ans=%sum% </br>
+echo. </br>
+echo = %ans% </br>
+echo-----------------------------------------------------------------------------------</br>
+pause</br>
+cls </br>
+echo previos Answer: %ans% </br>
+goto top </br>
+pause </br>
+exit </br>
+<h3>Save this file in bat Extration </h3></br>
+</br>
+</br>
+<h2># The Script of Clock </h2>
+@echo off </br>
+Title Clock </br> 
+@mode con cols=35 lines=7 </br>
+color 0f </br> 
+:main </br> 
+cls </br>
+echo. </br> 
+echo Time: %time% </br>   
+echo. </br>
+echo Date: %date% </br>
+echo. </br>
+ping -n 2 0.0.0.0 >nul </br>
+goto main </br>
+<h3>Save this file in bat Extration </h3></br> </hr>
+</br>
+</br>
+<h2># The Script </h2>
+ Dim Message, Speak </br>
+      	Message=InputBox("Enter text","Speak") </br>
+      	Set Speak=CreateObject("sapi.spvoice") </br>
+      	Speak.Speak Message </br> </hr>
+		<h3>Save this file in vbs Extration </h3> </br>
+
+</div
+</body>
+</html>
